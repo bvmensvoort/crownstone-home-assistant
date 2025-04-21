@@ -17,7 +17,7 @@ from homeassistant.components.sensor import (
     SensorStateClass,
 )
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ENERGY_KILO_WATT_HOUR, POWER_WATT, STATE_UNAVAILABLE
+from homeassistant.const import UnitOfEnergy, UnitOfPower, STATE_UNAVAILABLE
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.dispatcher import async_dispatcher_connect
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
@@ -172,7 +172,7 @@ class PowerUsage(CrownstoneBaseEntity, SensorEntity):
     """
 
     _attr_device_class = SensorDeviceClass.POWER
-    _attr_native_unit_of_measurement = POWER_WATT
+    _attr_native_unit_of_measurement = UnitOfPower.WATT
     _attr_state_class = SensorStateClass.MEASUREMENT
 
     def __init__(self, crownstone_data: Crownstone, usb: CrownstoneUart) -> None:
@@ -217,7 +217,7 @@ class EnergyUsage(CrownstoneBaseEntity, SensorEntity, RestoreEntity):
     """
 
     _attr_device_class = SensorDeviceClass.ENERGY
-    _attr_native_unit_of_measurement = ENERGY_KILO_WATT_HOUR
+    _attr_native_unit_of_measurement = UnitOfEnergy.KILO_WATT_HOUR
     _attr_state_class = SensorStateClass.TOTAL_INCREASING
 
     def __init__(self, crownstone_data: Crownstone, usb: CrownstoneUart) -> None:
