@@ -5,8 +5,8 @@
   "documentation": "https://github.com/crownstone/crownstone-home-assistant",
   "issue_tracker": "https://github.com/crownstone/crownstone-home-assistant/issues",
   "requirements": [
-    "crownstone-cloud==1.4.11",
-    "crownstone-sse==2.0.5",
+    "crownstone-cloud @ git+https://github.com/bvmensvoort/crownstone-lib-python-cloud.git@master",
+    "crownstone-sse @ git+https://github.com/bvmensvoort/crownstone-lib-python-sse.git@master",
     "crownstone-uart==2.1.0",
     "pyserial==3.5"
   ],
